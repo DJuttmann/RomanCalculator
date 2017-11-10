@@ -51,7 +51,11 @@ namespace RomanCalculator
       str.Append (c);
       string newInput = str.ToString ();
       if (RomanNumerals.ValidateRomanNumeral (newInput))
+      {
         textBoxInput.Text = newInput;
+        textBoxInput.SelectionStart = newInput.Length; // cursor to end
+        textBoxInput.SelectionLength = 0;
+      }
     }
 
 
@@ -95,7 +99,11 @@ namespace RomanCalculator
     {
       int lenght = textBoxInput.Text.Length;
       if (lenght > 0)
+      {
         textBoxInput.Text = textBoxInput.Text.Substring (0, lenght - 1);
+        textBoxInput.SelectionStart = textBoxInput.Text.Length; // cursor to end
+        textBoxInput.SelectionLength = 0;
+      }
     }
 
 
@@ -139,7 +147,7 @@ namespace RomanCalculator
       {
         SetLhs ();
         Op = RomanNumerals.Operator.Subtract;
-        labelOperator.Text = "-";
+        labelOperator.Text = "\x2012";
       }
     }
 
@@ -149,7 +157,7 @@ namespace RomanCalculator
       {
         SetLhs ();
         Op = RomanNumerals.Operator.Multiply;
-        labelOperator.Text = "*";
+        labelOperator.Text = "\xD7";
       }
     }
 
@@ -159,7 +167,7 @@ namespace RomanCalculator
       {
         SetLhs ();
         Op = RomanNumerals.Operator.Divide;
-        labelOperator.Text = "/";
+        labelOperator.Text = "\xF7";
       }
     }
 
@@ -180,6 +188,59 @@ namespace RomanCalculator
       ClearEvaluation ();
       State = ProgramState.TakingLhsInput;
       textBoxInput.Text = "";
+    }
+
+
+    // Key press handlers.
+    private void textBoxInput_KeyDown (object sender, KeyEventArgs e)
+    {
+      switch (e.KeyCode)
+      {
+      case Keys.I:
+        buttonI_Click (sender, null);
+        break;
+      case Keys.V:
+        buttonV_Click (sender, null);
+        break;
+      case Keys.X:
+        buttonX_Click (sender, null);
+        break;
+      case Keys.L:
+        buttonL_Click (sender, null);
+        break;
+      case Keys.C:
+        buttonC_Click (sender, null);
+        break;
+      case Keys.D:
+        buttonD_Click (sender, null);
+        break;
+      case Keys.M:
+        buttonM_Click (sender, null);
+        break;
+      case Keys.Add:
+        buttonAdd_Click (sender, null);
+        break;
+      case Keys.Subtract:
+        buttonSubtract_Click (sender, null);
+        break;
+      case Keys.Multiply:
+        buttonMultiply_Click (sender, null);
+        break;
+      case Keys.Divide:
+        buttonDivide_Click (sender, null);
+        break;
+      case Keys.Back:
+        buttonDel_Click (sender, null);
+        break;
+      case Keys.Enter:
+        buttonEvaluate_Click (sender, null);
+        break;
+      case Keys.Escape:
+        buttonClearAll_Click (sender, null);
+        break;
+      default:
+        break;
+      }
     }
   }
 }

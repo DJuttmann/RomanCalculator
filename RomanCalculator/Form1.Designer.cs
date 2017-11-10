@@ -58,6 +58,7 @@
       this.textBoxInput.ReadOnly = true;
       this.textBoxInput.Size = new System.Drawing.Size(368, 34);
       this.textBoxInput.TabIndex = 0;
+      this.textBoxInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxInput_KeyDown);
       // 
       // buttonAdd
       // 
