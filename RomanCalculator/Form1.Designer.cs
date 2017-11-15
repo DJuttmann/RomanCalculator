@@ -48,6 +48,7 @@
       this.buttonD = new System.Windows.Forms.Button();
       this.buttonC = new System.Windows.Forms.Button();
       this.buttonClearAll = new System.Windows.Forms.Button();
+      this.buttonClear = new System.Windows.Forms.Button();
       this.SuspendLayout();
       // 
       // textBoxInput
@@ -174,9 +175,9 @@
       // 
       this.buttonDel.BackColor = System.Drawing.Color.LightSalmon;
       this.buttonDel.Font = new System.Drawing.Font("Courier New", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.buttonDel.Location = new System.Drawing.Point(291, 63);
+      this.buttonDel.Location = new System.Drawing.Point(211, 123);
       this.buttonDel.Name = "buttonDel";
-      this.buttonDel.Size = new System.Drawing.Size(64, 42);
+      this.buttonDel.Size = new System.Drawing.Size(43, 42);
       this.buttonDel.TabIndex = 11;
       this.buttonDel.Text = "<";
       this.buttonDel.UseVisualStyleBackColor = false;
@@ -278,11 +279,24 @@
       this.buttonClearAll.UseVisualStyleBackColor = false;
       this.buttonClearAll.Click += new System.EventHandler(this.buttonClearAll_Click);
       // 
+      // buttonClear
+      // 
+      this.buttonClear.BackColor = System.Drawing.Color.LightSalmon;
+      this.buttonClear.Font = new System.Drawing.Font("Courier New", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.buttonClear.Location = new System.Drawing.Point(291, 63);
+      this.buttonClear.Name = "buttonClear";
+      this.buttonClear.Size = new System.Drawing.Size(64, 42);
+      this.buttonClear.TabIndex = 20;
+      this.buttonClear.Text = "C";
+      this.buttonClear.UseVisualStyleBackColor = false;
+      this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+      // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(392, 392);
+      this.Controls.Add(this.buttonClear);
       this.Controls.Add(this.buttonClearAll);
       this.Controls.Add(this.buttonM);
       this.Controls.Add(this.buttonD);
@@ -303,6 +317,7 @@
       this.Controls.Add(this.buttonSubtract);
       this.Controls.Add(this.buttonAdd);
       this.Controls.Add(this.textBoxInput);
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
       this.Name = "Form1";
       this.Text = "Form1";
       this.ResumeLayout(false);
@@ -332,6 +347,7 @@
     private System.Windows.Forms.Button buttonD;
     private System.Windows.Forms.Button buttonC;
     private System.Windows.Forms.Button buttonClearAll;
+    private System.Windows.Forms.Button buttonClear;
   }
 }
 

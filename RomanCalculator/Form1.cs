@@ -183,6 +183,11 @@ namespace RomanCalculator
       }
     }
 
+    private void buttonClear_Click (object sender, EventArgs e)
+    {
+      textBoxInput.Text = "";
+    }
+
     private void buttonClearAll_Click (object sender, EventArgs e)
     {
       ClearEvaluation ();
